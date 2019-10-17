@@ -1,0 +1,24 @@
+<div class="p-5">
+  <p>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </p>
+
+  <p>
+    <strong>Text:</strong>
+    <%= @article.text %>
+  </p>
+
+  <div class="p-2">
+    <h4>Comments</h4>
+    <%= render @article.comments %>
+  </div>
+
+  <div class="p-2">
+    <h4>Add a comment:</h4>
+    <%= render 'comments/form' %>
+  </div>
+  <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-sm btn-info" %>
+  <%= link_to 'Back', articles_path, class: "btn btn-sm btn-outline-secondary" %>
+  <%= link_to 'See All Articles', articles_path, class: "btn btn-sm btn-outline-success" %>
+</div>
