@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
+# In our case, we want the user to be authenticated on every action except
+# index and show, so we write that:
+  http_basic_authenticate_with name: "dhh", password: "secret",
+  except: [:index, :show]
   # A frequent practice is to place the standard CRUD actions
   # in each controller in the following order: index, show, new,
   # edit, create, update and destroy. You may use any order you
